@@ -5,6 +5,14 @@ $(function () {
   //答案
   var answers = ['ABCDE', 'A', 'A', 'D', 'D', 'E', 'F', 'B', 'G', 'A'];
 
+  //預載圖片
+  for (var i = 1; i <= 10; i++) {
+    var p = new Image();
+    var s = new Image();
+    p.src = 'images/puzzleDone-' + i + '.png';
+    s.src = 'images/question-q' + i + '-success.png'
+  }
+
   //Step1.選擇拼圖題號
   $('.puzzle-item').on('click', function () {
     choosedQuestion = $(this).off().index();
@@ -17,21 +25,21 @@ $(function () {
     if (answers[choosedQuestion].indexOf($(this).val()) != - 1) {
       $('.question--q' + (choosedQuestion + 1)).addClass('animate__animated animate__flipOutY');
       $('.questionSuccess--q' + (choosedQuestion + 1)).addClass('animate__animated animate__flipInY');
-      setTimeout(function(){
+      setTimeout(function () {
         $('.questionWrap--q' + (choosedQuestion + 1)).fadeOut();
         $('.questionArea').fadeOut();
         $('.puzzle-item').eq(choosedQuestion).addClass('puzzle-item--active puzzle-item--pu' + (choosedQuestion + 1) + '--active').find('.puzzle-item-text').addClass('puzzle-item-text--active');
         onComplete();
-      },1000);
+      }, 1000);
     } else {
       $('.questionFail span').text(' ' + answers[choosedQuestion] + ' ')
       $('.questionFail').fadeIn().delay(1500).fadeOut();
     }
   });
 
-  function onComplete(){
-    completed ++;
-    if(completed == 10){
+  function onComplete() {
+    completed++;
+    if (completed == 10) {
       $('.bg-CTCI').addClass('bg-CTCI--finish').find('p').text('Congratulations');
       $('.puzzle').fadeOut();
     }
