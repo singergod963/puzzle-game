@@ -11,7 +11,7 @@ $(function () {
     var q = new Image();
     var s = new Image();
     p.src = 'images/puzzleDone-' + i + '.png';
-    q.src = 'question-q' + i + '.png'
+    q.src = 'images/question-q' + i + '.png'
     s.src = 'images/question-q' + i + '-success.png'
   }
 
