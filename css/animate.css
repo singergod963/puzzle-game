@@ -12,8 +12,8 @@
   --animate-repeat: 1;
 }
 .animate__animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
   -webkit-animation-duration: var(--animate-duration);
   animation-duration: var(--animate-duration);
   -webkit-animation-fill-mode: both;
@@ -2483,8 +2483,8 @@
   backface-visibility: visible !important;
   -webkit-animation-name: flipInY;
   animation-name: flipInY;
-  -webkit-animation-delay: .6s;
-  animation-delay: .6s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 @-webkit-keyframes flipOutX {
   0% {
